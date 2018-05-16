@@ -23,9 +23,23 @@ function showcountries() {
 let finland = new Destination("Finland", "Europe", 5.5);
 let southAfrica = new Destination("South Africa", "Africa",55 );
 let thailand = new Destination("Thailand", "Asia", 68);
+  let allcountries = [[61.92410999999999,25.7481511],[-30.559482,	22.937506],[15.870032,100.992541]];
 
 document.getElementById('country1').innerHTML = (finland.toString());
 document.getElementById('country2').innerHTML = (southAfrica.toString());
 document.getElementById('country3').innerHTML = (thailand.toString());
 
 };
+
+/* Use Google Map API to randomly return the map for one of the three countries */
+
+function myMap() {
+let allcountries = [[61.92410999999999,25.7481511],[-30.559482,	22.937506],[15.870032,100.992541]];
+let countryselector = [0,1,2];
+let randomselection = countryselector[Math.floor(Math.random() * countryselector.length)];
+let mapProp= {
+    center:new google.maps.LatLng(allcountries[(randomselection)][0],allcountries[(randomselection)][1]),
+    zoom:5,
+};
+let map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}

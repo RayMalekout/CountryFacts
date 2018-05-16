@@ -7,9 +7,11 @@
   <title>Country Facts</title>
 
 <!-- Load the app.js JavaScript file -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5NL0lMudKNYLvKenT8VMvydXkOOYtw64&callback=myMap"></script>
 <script src="destination.js"> </script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+ <link rel="stylesheet" href="destination.css" />
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 <script>
@@ -18,7 +20,8 @@ function goBack() {
 }
 </script>
 
- <link rel="stylesheet" href="destination.css" />
+
+
 </head>
 
 <!-- Create the main and sub divs uaing the destination.css Material Design Lite code -->
@@ -33,11 +36,18 @@ function goBack() {
       <li id="country1"> </li>
       <li id="country2"> </li>
       <li id="country3"> </li>
+      <br>
+      The map for one of these 3 countries has been randomly displayed below
 
       </p>
+
+      <div id="googleMap" style="width:100%;height:400px;"></div>
     </div>
+
+
+
     <div class="mdl-card__actions mdl-card--border">
-      <a onclick="showcountries()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      <a onclick="showcountries(); myMap();" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
         See Country Facts
       </a>
       <a onclick="goBack()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
