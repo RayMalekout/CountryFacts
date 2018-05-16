@@ -1,0 +1,16 @@
+/* css for square card using the Material Design Lite library */
+div {
+  margin: 10px;
+}
+
+.demo-card-square.mdl-card {
+  width: 420px;
+  height: 420px;
+
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+
+  background:
+     #46B6AC;
+}
